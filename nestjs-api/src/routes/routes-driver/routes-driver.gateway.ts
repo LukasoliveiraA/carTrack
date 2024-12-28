@@ -23,11 +23,13 @@ export class RoutesDriverGateway {
         lat,
         lng,
       });
+      console.log(`Evento emitido: server:new-points/list`, { route_id, lat, lng });
       client.broadcast.emit('server:new-points:list', {
         route_id,
         lat,
         lng,
       });
+      console.log(`Evento broadcast emitido: server:new-points/list`, { route_id, lat, lng });
       await sleep(2000);
       const { lat: lat2, lng: lng2 } = step.end_location;
       client.emit(`server:new-points/${route_id}:list`, {
@@ -35,11 +37,13 @@ export class RoutesDriverGateway {
         lat: lat2,
         lng: lng2,
       });
+      console.log(`Evento emitido: server:new-points/list`, { route_id, lat, lng });
       client.broadcast.emit('server:new-points:list', {
         route_id,
         lat,
         lng,
       });
+      console.log(`Evento broadcast emitido: server:new-points/list`, { route_id, lat, lng });
       await sleep(2000);
     }
   }

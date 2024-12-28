@@ -268,7 +268,7 @@ export const makeCarIcon = (color: string) => {
   const svg = document.createElementNS(svgNS, "svg");
   svg.setAttribute("width", "32");
   svg.setAttribute("height", "32");
-  svg.setAttribute("style", "margin-top: 1px");
+  svg.setAttribute("style", "margin-top: -20px; margin-left: -16px;");
   svg.setAttribute("viewBox", "0 0 24 24");
   svg.setAttribute("fill", color);
 

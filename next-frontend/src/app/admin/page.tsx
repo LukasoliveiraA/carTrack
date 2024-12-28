@@ -22,7 +22,6 @@ export function AdminPage() {
           console.log('Socket conectado com sucesso!!');
          });
         }
-
         socket.on('disconnect', () => {
          console.log('Socket desconectado.');
         });
