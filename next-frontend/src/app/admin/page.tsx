@@ -13,6 +13,20 @@ export function AdminPage() {
       return;
     }
 
+    if (socket.connected) {
+         console.log('Socket conectado com sucesso!');   
+        } else { 
+         console.log('Socket conectando...');
+         socket.connect();
+         socket.once('connect', () => {
+          console.log('Socket conectado com sucesso!!');
+         });
+        }
+
+        socket.on('disconnect', () => {
+         console.log('Socket desconectado.');
+        });
+
     socket.on(
       `server:new-points:list`,
       async (data: { route_id: string; lat: number; lng: number }) => {
