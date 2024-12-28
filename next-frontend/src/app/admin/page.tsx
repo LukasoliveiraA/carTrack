@@ -12,19 +12,6 @@ export function AdminPage() {
     if (!map) {
       return;
     }
-    if (socket.connected) {
-      console.log('Socket conectado com sucesso!');
-    } else {
-      console.log('Socket conectando...');
-      socket.connect();
-      socket.once('connect', () => {
-        console.log('Socket conectado com sucesso!!');
-      });
-    }
-
-    socket.on('disconnect', () => {
-      console.log('Socket desconectado.');
-    });
 
     socket.on(
       `server:new-points:list`,
